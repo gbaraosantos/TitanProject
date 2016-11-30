@@ -1,6 +1,10 @@
-package com.baronhub.titan.project.email;
+package com.baronhub.titan.project.objects.email;
 
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 
 /**
  * Email class
@@ -34,11 +38,25 @@ public class Email {
     public String getSubject() { return subject; }
     public String getMessageBody() { return messageBody; }
 
+    public void sendEmail() throws MessagingException{
+        this.mailSender.send(convertIntoMimeMessage(false));
+    }
+
+    private MimeMessage convertIntoMimeMessage(Boolean isHtml) throws MessagingException{
+        MimeMessage mimeMessage = this.mailSender.createMimeMessage();
+        MimeMessageHelper mailMsg = new MimeMessageHelper(mimeMessage);
+
+        mailMsg.setFrom(fromAddress);
+        mailMsg.setTo(toAddress);
+        mailMsg.setSubject(subject);
+        mailMsg.setText(messageBody,isHtml);
+
+        return mimeMessage;
+    }
 
     /**
      * Builder for class email
      */
-
     public static class EmailBuilder{
         /*Mandatory Parameters*/
         private final JavaMailSender mailSender;
