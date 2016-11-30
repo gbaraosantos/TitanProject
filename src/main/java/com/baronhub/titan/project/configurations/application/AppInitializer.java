@@ -19,7 +19,8 @@ import java.util.HashSet;
 public class AppInitializer implements WebApplicationInitializer {
 
     /**
-     * Application Startup
+     *  Application Startup
+     * @param  container initializes servlet context
      */
     public void onStartup(ServletContext container) throws ServletException {
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
