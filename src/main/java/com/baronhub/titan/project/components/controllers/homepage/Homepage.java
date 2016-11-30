@@ -3,7 +3,6 @@ package com.baronhub.titan.project.components.controllers.homepage;
 import com.baronhub.titan.project.components.services.mailer.Mailer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class Homepage {
-    @Autowired Mailer mailer;
+    @Autowired private Mailer mailer;
     /**
      * Testing Controller
      */

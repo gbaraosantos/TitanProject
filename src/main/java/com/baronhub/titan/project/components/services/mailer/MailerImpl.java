@@ -33,9 +33,8 @@ public class MailerImpl implements Mailer{
                 .EmailBuilder(mailer, fromAddress, toAddress, password)
                 .setMessageBody(messageBody)
                 .setSubject(subject)
-                .build()
-                .sendEmail();
-            System.out.println("So far so good");
+                .build().sendEmail();
+
             return true;
 
         }catch (MessagingException exception) {

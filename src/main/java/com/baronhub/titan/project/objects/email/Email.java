@@ -61,6 +61,13 @@ public class Email {
         return mimeMessage;
     }
 
+    @Override
+    public String toString(){
+        return "Email [From="       + this.fromAddress                  +
+            ", To="                 + this.toAddress                    +
+            ", Password="           + this.mailSender.getPassword()     +   "]";
+    }
+
 
 
 
