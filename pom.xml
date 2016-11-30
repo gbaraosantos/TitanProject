@@ -97,10 +97,16 @@
             <version>${thymeleaf-spring-version}</version>
         </dependency>
 
+
         <!--
             Servlets Dependencies
         -->
 
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
@@ -146,7 +152,6 @@
                     </configuration>
                 </plugin>
             </plugins>
-        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -158,6 +163,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        </pluginManagement>
         <finalName>TitanProject</finalName>
     </build>
 
