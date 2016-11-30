@@ -27,7 +27,7 @@ public class MailerImpl implements Mailer{
      * @param messageBody Message Body
      */
     @Override
-    public void sendEmail(String fromAddress, String toAddress, String subject, String messageBody, String password) {
+    public Boolean sendEmail(String fromAddress, String toAddress, String subject, String messageBody, String password) {
         try {
             new Email
                 .EmailBuilder(mailer, fromAddress, toAddress, password)
@@ -35,6 +35,12 @@ public class MailerImpl implements Mailer{
                 .setSubject(subject)
                 .build()
                 .sendEmail();
-        }catch (MessagingException exception) { logger.log(Level.ERROR, exception); }
+
+            return true;
+
+        }catch (MessagingException exception) {
+            logger.log(Level.ERROR, exception);
+            return false;
+        }
     }
 }
