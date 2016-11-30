@@ -15,6 +15,7 @@
         <spring-web-mvc-version>4.1.6.RELEASE</spring-web-mvc-version>
         <spring-tx-orm-version>4.0.9.RELEASE</spring-tx-orm-version>
         <spring-security-version>4.0.0.RELEASE</spring-security-version>
+        <spring-context-version>3.1.1.RELEASE</spring-context-version>
         <thymeleaf-version>3.0.0.RELEASE</thymeleaf-version>
         <thymeleaf-security-version>3.0.1.RELEASE</thymeleaf-security-version>
         <thymeleaf-spring-version>2.1.4.RELEASE</thymeleaf-spring-version>
@@ -23,6 +24,7 @@
         <jsp-api-version>2.0</jsp-api-version>
         <servlet-api-version>2.5</servlet-api-version>
         <javax-servlet-api-version>3.0.1</javax-servlet-api-version>
+        <javax-mail-version>1.4.5</javax-mail-version>
     </properties>
 
     <dependencies>
@@ -71,6 +73,11 @@
             <artifactId>spring-security-config</artifactId>
             <version>${spring-security-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring-context-version}</version>
+        </dependency>
 
         <!--
             View Dependencies
@@ -105,7 +112,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>${javax-servlet-api-version}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -132,6 +139,17 @@
             <artifactId>log4j</artifactId>
             <version>${log4j-version}</version>
         </dependency>
+
+        <!--
+            Email Dependencies
+        -->
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>${javax-mail-version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

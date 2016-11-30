@@ -20,7 +20,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.baronhub.titan.project")
-@PropertySource(value = "classpath:TitanProjectConfiguration.properties")
+@PropertySource(value = "classpath:properties/TitanProjectConfiguration.properties")
 public class AppConfiguration extends WebMvcConfigurerAdapter {
     @Autowired private Environment environment;
     /**
