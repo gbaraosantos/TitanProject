@@ -31,7 +31,9 @@ public class Email {
         this.toAddress = builder.toAddress;
         this.subject = builder.subject;
         this.messageBody = builder.messageBody;
+
         this.mailSender.setPassword(builder.password);
+        this.mailSender.setUsername(builder.fromAddress);
     }
 
     public JavaMailSender getMailSender() { return mailSender; }
@@ -67,8 +69,6 @@ public class Email {
             ", To="                 + this.toAddress                    +
             ", Password="           + this.mailSender.getPassword()     +   "]";
     }
-
-
 
 
     /**

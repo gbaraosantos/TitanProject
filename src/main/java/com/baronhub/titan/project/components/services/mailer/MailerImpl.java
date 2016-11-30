@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.mail.MessagingException;
+import java.util.List;
 
 /**
  * Mailer Service Implementation
@@ -22,19 +23,20 @@ public class MailerImpl implements Mailer{
 
     /**
      * @param fromAddress from Whom
-     * @param toAddress to Whom
+     * @param toAddresses to Whom
      * @param subject Email Subject
      * @param messageBody Message Body
      */
     @Override
-    public Boolean sendEmail(String fromAddress, String toAddress, String subject, String messageBody, String password) {
+    public Boolean sendEmail(String fromAddress, List<String> toAddresses, String subject, String messageBody, String password) {
         try {
-            new Email
-                .EmailBuilder(mailer, fromAddress, toAddress, password)
-                .setMessageBody(messageBody)
-                .setSubject(subject)
-                .build().sendEmail();
-
+            for (String toAddress : toAddresses) {
+                new Email
+                    .EmailBuilder(mailer, fromAddress, toAddress, password)
+                    .setMessageBody(messageBody)
+                    .setSubject(subject)
+                    .build().sendEmail();
+            }
             return true;
 
         }catch (MessagingException exception) {
