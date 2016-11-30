@@ -16,7 +16,6 @@ public class Email {
     private final JavaMailSenderImpl mailSender;
     private String fromAddress;
     private String toAddress;
-    private String password;
 
     /*Optional Parameters*/
     private String subject;
@@ -27,7 +26,6 @@ public class Email {
      * @param builder EmailBuilder
      */
     public Email(EmailBuilder builder){
-        this.password = builder.password;
         this.mailSender = builder.mailSender;
         this.fromAddress = builder.fromAddress;
         this.toAddress = builder.toAddress;
@@ -36,7 +34,6 @@ public class Email {
         this.mailSender.setPassword(builder.password);
     }
 
-    public String getPassword() { return password; }
     public JavaMailSender getMailSender() { return mailSender; }
     public String getFromAddress() { return fromAddress; }
     public String getToAddress() { return toAddress; }

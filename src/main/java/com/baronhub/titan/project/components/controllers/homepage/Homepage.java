@@ -20,6 +20,6 @@ public class Homepage {
 
     @RequestMapping(value = "/teste" , method = RequestMethod.GET)
     void teste(){
-        mailer.sendEmail("elearning.weblink@gmail.com", "g.baraosantos@gmail.com", "Hello", "Teste Ok", "konkrets1234");
+        mailer.sendEmail("info.baronhub@gmail.com", "g.baraosantos@gmail.com", "Hello", "Teste Ok", "baronhub123");
     }
 }

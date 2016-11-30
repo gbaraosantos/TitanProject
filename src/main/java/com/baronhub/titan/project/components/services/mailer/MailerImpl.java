@@ -35,7 +35,7 @@ public class MailerImpl implements Mailer{
                 .setSubject(subject)
                 .build()
                 .sendEmail();
-
+            System.out.println("So far so good");
             return true;
 
         }catch (MessagingException exception) {
