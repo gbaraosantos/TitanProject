@@ -43,6 +43,11 @@ public class Email {
     public String getSubject() { return subject; }
     public String getMessageBody() { return messageBody; }
 
+    /**
+     * Sends email
+     * @throws MessagingException in case MimeMessage build fails
+     */
+
     public void sendEmail() throws MessagingException{
         this.mailSender.send(convertIntoMimeMessage(false));
     }
