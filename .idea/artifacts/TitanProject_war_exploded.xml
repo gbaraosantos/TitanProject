@@ -7,7 +7,7 @@
           <element id="module-output" name="TitanProject" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.springframework:spring-core:${spring-version}" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:${spring.version}" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.1.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.1.6.RELEASE" />
