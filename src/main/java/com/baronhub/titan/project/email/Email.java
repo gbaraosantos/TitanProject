@@ -1,8 +1,6 @@
 package com.baronhub.titan.project.email;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Component;
 
 /**
  * Email class
@@ -18,7 +16,10 @@ public class Email {
     private String subject;
     private String messageBody;
 
-
+    /**
+     * Constructor for Email
+     * @param builder EmailBuilder
+     */
     public Email(EmailBuilder builder){
         this.mailSender = builder.mailSender;
         this.fromAddress = builder.fromAddress;
@@ -37,16 +38,23 @@ public class Email {
     /**
      * Builder for class email
      */
+
     public static class EmailBuilder{
         /*Mandatory Parameters*/
         private final JavaMailSender mailSender;
-
         private String fromAddress;
         private String toAddress;
 
         /*Optional Parameters*/
         private String subject;
         private String messageBody;
+
+        /**
+         *
+         * @param mailSender Email Server configurations
+         * @param fromAddress Email Address - From
+         * @param toAddress Email Address - To
+         */
 
         public EmailBuilder(JavaMailSender mailSender, String fromAddress, String toAddress){
             this.mailSender = mailSender;
@@ -64,11 +72,14 @@ public class Email {
             return this;
         }
 
+        /**
+         * Turns Object builder into object
+         * @return Email returns an email object
+         */
+
         public Email build(){
             return new Email(this);
         }
 
     }
-
-
 }
