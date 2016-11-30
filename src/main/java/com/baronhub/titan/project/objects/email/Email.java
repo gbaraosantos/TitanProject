@@ -45,7 +45,7 @@ public class Email {
 
     /**
      * Sends email
-     * @throws MessagingException in case MimeMessage build fails
+     * @throws MessagingException in case MimeMessage build fails - To be handled in Service
      */
 
     public void sendEmail() throws MessagingException{

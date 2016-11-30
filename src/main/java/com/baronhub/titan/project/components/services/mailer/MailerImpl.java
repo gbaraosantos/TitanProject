@@ -29,13 +29,12 @@ public class MailerImpl implements Mailer{
     @Override
     public void sendEmail(String fromAddress, String toAddress, String subject, String messageBody, String password) {
         try {
-            Email email = new Email
-                    .EmailBuilder(mailer, fromAddress, toAddress, password)
-                    .setMessageBody(messageBody)
-                    .setSubject(subject)
-                    .build();
-
-            email.sendEmail();
+            new Email
+                .EmailBuilder(mailer, fromAddress, toAddress, password)
+                .setMessageBody(messageBody)
+                .setSubject(subject)
+                .build()
+                .sendEmail();
         }catch (MessagingException exception) { logger.log(Level.ERROR, exception); }
     }
 }
