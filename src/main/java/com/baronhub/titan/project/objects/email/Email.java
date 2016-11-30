@@ -8,7 +8,8 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 /**
- * Email class
+ * Email class 
+ * // TODO: 30/11/2016 Create an email template and add support for that
  */
 
 public class Email {
@@ -69,6 +70,10 @@ public class Email {
             ", To="                 + this.toAddress                    +
             ", Password="           + this.mailSender.getPassword()     +   "]";
     }
+
+
+
+
 
 
     /**
