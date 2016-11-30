@@ -11,6 +11,7 @@ public interface Mailer {
      * @param toAddress to Whom
      * @param subject Email Subject
      * @param messageBody Message Body
+     * @Param password password
      */
-    void sendEmail(String fromAddress, String toAddress, String subject, String messageBody);
+    void sendEmail(String fromAddress, String toAddress, String subject, String messageBody, String password);
 }
