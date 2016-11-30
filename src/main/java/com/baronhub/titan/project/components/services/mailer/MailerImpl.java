@@ -1,10 +1,8 @@
 package com.baronhub.titan.project.components.services.mailer;
 
 import com.baronhub.titan.project.objects.email.Email;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.lf5.LogRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -22,13 +20,7 @@ public class MailerImpl implements Mailer{
     @Autowired private JavaMailSender mailer;
     private static Logger logger = Logger.getLogger(MailerImpl.class.getName());
 
-    /**
-     *
-     * @param fromAddress from Whom
-     * @param toAddress to Whom
-     * @param subject Email Subject
-     * @param messageBody Message Body
-     */
+
     @Override
     public void sendEmail(String fromAddress, String toAddress, String subject, String messageBody) {
         try {
@@ -39,6 +31,6 @@ public class MailerImpl implements Mailer{
                     .build();
 
             email.sendEmail();
-        }catch (MessagingException exception) { logger.log(Level.ERROR, exception.getMessage()); }
+        }catch (MessagingException exception) { logger.log(Level.ERROR, exception); }
     }
 }

@@ -4,7 +4,7 @@ package com.baronhub.titan.project.exceptions;
  * Exception Abstraction
  */
 public class BaseException extends Exception{
-    private String message;
+    private final String message;
 
     /**
      * Exception Constructor
@@ -18,6 +18,7 @@ public class BaseException extends Exception{
      * Get Exception Message
      * @return String message
      */
+    @Override
     public String getMessage(){
         return message;
     }

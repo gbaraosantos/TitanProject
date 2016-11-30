@@ -16,6 +16,6 @@ public class Homepage {
 
     @RequestMapping(value = "/teste" , method = RequestMethod.GET)
     void teste(){
-        System.out.println("Here");
+
     }
 }
