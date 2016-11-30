@@ -11,15 +11,6 @@
     <url>http://titan.baronhub.com</url>
     <version>1.0-SNAPSHOT</version>
 
-    <repositories>
-        <repository>
-            <id>java.net2</id>
-            <name>Repository hosting the jee6 artifacts</name>
-            <url>http://download.java.net/maven/2</url>
-        </repository>
-    </repositories>
-
-
     <properties>
         <spring-web-mvc-version>4.1.6.RELEASE</spring-web-mvc-version>
         <spring-tx-orm-version>4.0.9.RELEASE</spring-tx-orm-version>
@@ -112,6 +103,11 @@
 
         <dependency>
             <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet-api-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>${jstl-version}</version>
         </dependency>
@@ -120,24 +116,6 @@
             <artifactId>jsp-api</artifactId>
             <version>${jsp-api-version}</version>
         </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${servlet-api-version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${javax-servlet-api-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
-            <scope>provided</scope>
-        </dependency>
-
 
         <!--
             Logging Dependencies
