@@ -13,13 +13,13 @@ import javax.servlet.SessionTrackingMode;
 import java.util.HashSet;
 
 /**
- * Replaces web.xml
+ * Replaces dispatcherServlet.xml
  */
 @ComponentScan(basePackages = "com.baronhub.titan.project")
 public class AppInitializer implements WebApplicationInitializer {
 
     /**
-     *  Application Startup
+     * Application Startup
      * @param  container initializes servlet context
      */
     public void onStartup(ServletContext container) throws ServletException {

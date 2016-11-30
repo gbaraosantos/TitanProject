@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 /**
- * Spring Dispatcher Servlet
+ * Replaces web.xml
  */
 
 @Configuration
