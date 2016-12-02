@@ -35,7 +35,7 @@ public class Hibernate {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("com.baronhub.titan.project.components.dao.models");
+        sessionFactory.setPackagesToScan("com.baronhub.titan.project.components.models");
         sessionFactory.setHibernateProperties(hibernateProperties());
 
         return sessionFactory;
