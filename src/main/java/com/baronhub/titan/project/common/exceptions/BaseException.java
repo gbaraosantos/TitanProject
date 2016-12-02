@@ -1,4 +1,4 @@
-package com.baronhub.titan.project.exceptions;
+package com.baronhub.titan.project.common.exceptions;
 
 /**
  * Exception Abstraction

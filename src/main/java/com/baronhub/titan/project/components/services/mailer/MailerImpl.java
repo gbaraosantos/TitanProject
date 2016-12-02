@@ -1,6 +1,6 @@
 package com.baronhub.titan.project.components.services.mailer;
 
-import com.baronhub.titan.project.objects.email.Email;
+import com.baronhub.titan.project.common.objects.email.Email;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

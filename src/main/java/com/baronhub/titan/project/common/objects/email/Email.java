@@ -1,4 +1,4 @@
-package com.baronhub.titan.project.objects.email;
+package com.baronhub.titan.project.common.objects.email;
 
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -8,8 +8,7 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 /**
- * Email class 
- * // TODO: 30/11/2016 Create an email template and add support for that
+ * Email class
  */
 
 public class Email {

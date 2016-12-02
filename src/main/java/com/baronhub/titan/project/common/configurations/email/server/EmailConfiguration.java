@@ -1,4 +1,4 @@
-package com.baronhub.titan.project.configurations.email.server;
+package com.baronhub.titan.project.common.configurations.email.server;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
