@@ -26,6 +26,7 @@
         <javax-servlet-api-version>3.0.1</javax-servlet-api-version>
         <javax-mail-version>1.4.5</javax-mail-version>
         <hibernate-version>4.3.10.Final</hibernate-version>
+        <mysql-connector-version>5.1.36</mysql-connector-version>
     </properties>
 
     <dependencies>
@@ -158,7 +159,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>4.3.10.Final</version>
+            <version>${hibernate-version}</version>
         </dependency>
 
         <!--
@@ -168,7 +169,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.36</version>
+            <version>${mysql-connector-version}</version>
         </dependency>
     </dependencies>
 
