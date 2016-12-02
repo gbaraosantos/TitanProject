@@ -10,10 +10,10 @@ import java.lang.reflect.ParameterizedType;
 
 /**
  *
- * @param <pk> Generic Type / Serializable Object
+ * @param <P1> Generic Type / Serializable Object
  * @param <T> Generic Type
  */
-public abstract class AbstractDao<pk extends Serializable, T> {
+public abstract class AbstractDao<P1 extends Serializable, T> {
     @Autowired private SessionFactory sessionFactory;
     private final Class<T> persistentClass;
 
@@ -37,7 +37,7 @@ public abstract class AbstractDao<pk extends Serializable, T> {
      */
 
     @SuppressWarnings("unchecked")
-    public T getByKey(pk key) {
+    public T getByKey(P1 key) {
         return (T) getSession().get(persistentClass, key);
     }
 
