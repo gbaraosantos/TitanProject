@@ -9,9 +9,11 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 
 /**
- * Database Abstract connection
+ *
+ * @param <pk> Generic Type / Serializable Object
+ * @param <T> Generic Type
  */
-public abstract class AbstractDao<PK extends Serializable, T> {
+public abstract class AbstractDao<pk extends Serializable, T> {
     @Autowired private SessionFactory sessionFactory;
     private final Class<T> persistentClass;
 
@@ -29,16 +31,19 @@ public abstract class AbstractDao<PK extends Serializable, T> {
     }
 
     /**
-     * Fetch using Primary Key
+     *
+     * @param key Primary Key
+     * @return returns Object from database
      */
 
     @SuppressWarnings("unchecked")
-    public T getByKey(PK key) {
+    public T getByKey(pk key) {
         return (T) getSession().get(persistentClass, key);
     }
 
     /**
-     * Add Object
+     * Add new Object to database
+     * @param entity Entity of an Object
      */
     public void persist(T entity) {
         getSession().persist(entity);
@@ -46,18 +51,21 @@ public abstract class AbstractDao<PK extends Serializable, T> {
 
     /**
      * Saves Object
+     * @param entity Object
      */
     public void save(T entity) {getSession().save(entity);}
 
     /**
-     * Updates Object
+     * Updates database object
+     * @param entity Object to be updated
      */
     public void update(T entity) {
         getSession().update(entity);
     }
 
     /**
-     * Deletes Object
+     * Deletes Object from database
+     * @param entity Object to be deleted
      */
     public void delete(T entity) {
         getSession().delete(entity);
