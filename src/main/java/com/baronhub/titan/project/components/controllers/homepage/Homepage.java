@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Homepage Controller
  */
@@ -19,5 +22,8 @@ public class Homepage {
 
     @RequestMapping(value = "/teste" , method = RequestMethod.GET)
     void teste(){
+        List<String> toSend = new LinkedList<>();
+        toSend.add("g.baraosantos@gmail.com");
+        mailer.sendEmail("info.baronhub@gmail.com",toSend,"Test","Test","baronhub123");
     }
 }
