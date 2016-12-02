@@ -1,4 +1,4 @@
-package com.baronhub.titan.project.common.configurations.application;
+package com.baronhub.titan.project.configurations.application;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.WebApplicationInitializer;

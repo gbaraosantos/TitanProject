@@ -1,4 +1,4 @@
-package com.baronhub.titan.project.common.configurations.storage.databases.relational;
+package com.baronhub.titan.project.configurations.storage.databases.relational;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({ "com.baronhub.titan.project.common.configurations" })
+@ComponentScan({"com.baronhub.titan.project.configurations"})
 @PropertySource(value = {"classpath:properties/Database.properties"})
 public class Hibernate {
 
@@ -35,7 +35,7 @@ public class Hibernate {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("com.baronhub.titan.project.common.models");
+        sessionFactory.setPackagesToScan("com.baronhub.titan.project.components.dao.models");
         sessionFactory.setHibernateProperties(hibernateProperties());
 
         return sessionFactory;
@@ -49,7 +49,7 @@ public class Hibernate {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
-        dataSource.setUrl(environment.getRequiredProperty("jdbc.url") );
+        dataSource.setUrl(urlBuilder());
         dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
         dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
 
