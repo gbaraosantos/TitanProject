@@ -23,7 +23,7 @@ public enum Permission {
      * @return Permission
      */
     public static Permission getProfileType(String perm) {
-            if (perm.equals("Admin")) return Permission.ADMIN;
+            if (perm.equals(ADMIN.toString())) return Permission.ADMIN;
 
             return Permission.USER;
 
