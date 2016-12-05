@@ -13,7 +13,7 @@ public class Permissions {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="Type", length=15, unique=true, nullable=false)
+    @Column(name="type", length=15, unique=true, nullable=false)
     private String type;
 
     public int getId() { return id; }
