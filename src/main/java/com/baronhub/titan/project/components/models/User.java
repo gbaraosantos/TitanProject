@@ -54,7 +54,7 @@ public class User {
     @Override
     public boolean equals(Object b){
         User other;
-
+        if (this == b)  return true;
         if (!(b instanceof User)) return false;
         else {
             other = (User) b;
@@ -64,6 +64,18 @@ public class User {
                     other.getId() == this.getId();
 
         }
+    }
+
+    /**
+     * Overrides hashCode
+     * @return Int
+     */
+    @Override
+    public int hashCode(){
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((email == null)  ? 0 : email.hashCode());
+        return result;
     }
 
 
