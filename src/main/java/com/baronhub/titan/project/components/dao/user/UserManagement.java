@@ -3,7 +3,7 @@ package com.baronhub.titan.project.components.dao.user;
 
 
 import com.baronhub.titan.project.common.exceptions.BaseException;
-import com.baronhub.titan.project.components.models.User;
+import com.baronhub.titan.project.components.models.user.User;
 
 /**
  * Methods regarding users

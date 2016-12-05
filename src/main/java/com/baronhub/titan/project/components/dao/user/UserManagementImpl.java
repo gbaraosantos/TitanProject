@@ -2,7 +2,7 @@ package com.baronhub.titan.project.components.dao.user;
 
 import com.baronhub.titan.project.common.exceptions.BaseException;
 import com.baronhub.titan.project.components.dao.AbstractDao;
-import com.baronhub.titan.project.components.models.User;
+import com.baronhub.titan.project.components.models.user.User;
 import org.springframework.stereotype.Repository;
 
 /**
