@@ -9,19 +9,19 @@ public enum State {
     DELETED("Deleted"),
     LOCKED("Locked");
 
-    private String state;
+    private String stateType;
 
     private State(final String state){
-        this.state = state;
+        this.stateType = state;
     }
 
     public String getState(){
-        return this.state;
+        return this.stateType;
     }
 
     @Override
     public String toString(){
-        return this.state;
+        return this.stateType;
     }
 
     public String getName(){
