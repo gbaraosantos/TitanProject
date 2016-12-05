@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
 /**
  * Session Mappings
  */
-@Component
+
 public class SpringAccountDetails {
     @Autowired private SessionRegistry sessionRegistry;
     private String userName;
