@@ -4,9 +4,9 @@ package com.baronhub.titan.project.common.exceptions;
  * Database Exceptions
  */
 
-public class Database {
+public class DatabaseExceptions{
 
-    private Database(){}
+    private DatabaseExceptions(){}
 
     /**
      * In case a query returns zero objects

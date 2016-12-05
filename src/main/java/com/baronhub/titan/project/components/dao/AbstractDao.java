@@ -1,7 +1,7 @@
 package com.baronhub.titan.project.components.dao;
 
 import com.baronhub.titan.project.common.exceptions.BaseException;
-import com.baronhub.titan.project.common.exceptions.Database;
+import com.baronhub.titan.project.common.exceptions.DatabaseExceptions;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -41,7 +41,7 @@ public abstract class AbstractDao<P1 extends Serializable, T , P2 extends Serial
     @SuppressWarnings("unchecked")
     protected T getByKey(P1 key) throws BaseException{
         T temp = (T) getSession().get(persistentClass, key);
-        if(temp == null) throw new Database.NoElementsException("No elements in this query");
+        if(temp == null) throw new DatabaseExceptions.NoElementsException("No elements in this query");
         return temp;
     }
 
@@ -55,10 +55,7 @@ public abstract class AbstractDao<P1 extends Serializable, T , P2 extends Serial
     protected List<T> getByValue(String propertyName, P2 value) throws BaseException{
         Criteria cr = getSession().createCriteria(persistentClass);
         cr.add(Restrictions.eq(propertyName, value));
-
-        if( cr.list()==null ||  cr.list().isEmpty()){
-            throw new Database.NoElementsException("No elements in this query");
-        }
+        if( cr.list()==null ||  cr.list().size() <= 0) throw new DatabaseExceptions.NoElementsException("No elements in this query");
 
         return (List<T>) cr.list();
     }
@@ -100,12 +97,9 @@ public abstract class AbstractDao<P1 extends Serializable, T , P2 extends Serial
      * @throws BaseException Exception returns
      */
     protected T getOne(List<T> list) throws BaseException{
-        if(list==null || list.isEmpty()){
-            throw new Database.NoElementsException("No elements in this query");
-        }
-        if(list.size() > 1){
-            throw new Database.MoreThanExpectedException("Query returned more than one element");
-        }
+        if(list==null || list.isEmpty()) throw new DatabaseExceptions.NoElementsException("No elements in this query");
+        if(list.size() > 1) throw new DatabaseExceptions.MoreThanExpectedException("Query returned more than one element");
+
         return list.get(0);
     }
 
