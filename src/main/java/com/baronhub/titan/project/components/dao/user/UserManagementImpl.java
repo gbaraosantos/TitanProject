@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository("userManagementDao")
-public class UserManagementImpl extends AbstractDao<Integer, User, String> implements  UserManagement{
+public class UserManagementImpl extends AbstractDao<Integer, User> implements  UserManagement{
     /**
      * Fetches a user by email
      * @param email String Unique
@@ -18,7 +18,7 @@ public class UserManagementImpl extends AbstractDao<Integer, User, String> imple
      */
     @Override
     public User getUserByEmail(String email) throws BaseException {
-        return getOne(getByValue("email" , email));
+        return getOne(getByString("email" , email));
 
     }
 
