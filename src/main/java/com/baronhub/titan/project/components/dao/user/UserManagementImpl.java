@@ -3,10 +3,13 @@ package com.baronhub.titan.project.components.dao.user;
 import com.baronhub.titan.project.common.exceptions.BaseException;
 import com.baronhub.titan.project.components.dao.AbstractDao;
 import com.baronhub.titan.project.components.models.User;
+import org.springframework.stereotype.Repository;
 
 /**
  * UserManagement Implementation
  */
+
+@Repository("userManagementDao")
 public class UserManagementImpl extends AbstractDao<Integer, User, String> implements  UserManagement{
     /**
      * Fetches a user by email
@@ -44,7 +47,7 @@ public class UserManagementImpl extends AbstractDao<Integer, User, String> imple
      */
     @Override
     public User getUser(Integer id) throws BaseException {
-        return (User) getByKey(id);
+        return getByKey(id);
     }
 
     /**
