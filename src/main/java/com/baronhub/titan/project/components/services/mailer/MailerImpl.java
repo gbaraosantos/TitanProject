@@ -31,11 +31,11 @@ public class MailerImpl implements Mailer{
     public Boolean sendEmail(String fromAddress, List<String> toAddresses, String subject, String messageBody, String password) {
         try {
             for (String toAddress : toAddresses) {
-                new Email
-                    .EmailBuilder(mailer, fromAddress, toAddress, password)
-                    .setMessageBody(messageBody)
-                    .setSubject(subject)
-                    .build().sendEmail();
+                new Email.EmailBuilder(mailer, fromAddress, toAddress, password)
+                        .setMessageBody(messageBody)
+                        .setSubject(subject)
+                        .build()
+                    .sendEmail();
             }
             return true;
 

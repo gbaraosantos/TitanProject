@@ -1,10 +1,9 @@
-package com.baronhub.titan.project.components.services.auth;
+package com.baronhub.titan.project.components.services.authentication;
 
 import com.baronhub.titan.project.common.enums.State;
 import com.baronhub.titan.project.common.exceptions.BaseException;
 import com.baronhub.titan.project.components.dao.user.UserManagement;
 import com.baronhub.titan.project.components.models.user.User;
-import com.baronhub.titan.project.components.services.mailer.MailerImpl;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Custom impl of User Details
+ * Custom implementation of User Details
  */
 @Service("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
