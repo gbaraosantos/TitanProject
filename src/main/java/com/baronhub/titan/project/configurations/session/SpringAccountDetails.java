@@ -15,19 +15,18 @@ import java.util.List;
 @Component
 public class SpringAccountDetails {
     @Autowired private SessionRegistry sessionRegistry;
-    /**
-     * Returns the username
-     * @return Username
-     */
-    public String getUser() {
-        String userName;
+    private String userName;
+
+
+    public SpringAccountDetails(){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         if (principal instanceof UserDetails) userName = ((UserDetails)principal).getUsername();
         else userName = principal.toString();
 
-        return userName;
     }
+
+    public String getUserName() {return userName;}
 
     /**
      * Returns the user names of all users logged in

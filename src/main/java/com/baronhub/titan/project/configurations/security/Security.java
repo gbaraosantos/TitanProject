@@ -77,6 +77,33 @@ public class Security extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/", "/login").permitAll()
+                .antMatchers("/titan").authenticated()
+                .antMatchers("/titan/admin/**").access("hasRole('Admin')");
+
+        http.exceptionHandling()
+                .accessDeniedPage("/accessDenied");
+
+        /*Session Management*/
+        http.sessionManagement()
+                .maximumSessions(1)
+                .expiredUrl("/login?expired=true")
+                .sessionRegistry(sessionRegistry());
+
+        /*Login, Logout configuration and csrf protection*/
+        http.formLogin()
+                .loginPage("/login").loginProcessingUrl("/loginForm")
+                .usernameParameter("email")
+                .passwordParameter("password");
+
+        http.csrf();
+
+        http.logout()
+                .logoutUrl("/titan/logout")
+                .logoutSuccessUrl("/index")
+                .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID");
 
     }
 }
