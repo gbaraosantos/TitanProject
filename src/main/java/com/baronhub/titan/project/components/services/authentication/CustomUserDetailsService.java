@@ -4,7 +4,6 @@ import com.baronhub.titan.project.common.enums.State;
 import com.baronhub.titan.project.common.exceptions.BaseException;
 import com.baronhub.titan.project.components.dao.user.UserManagement;
 import com.baronhub.titan.project.components.models.user.User;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
