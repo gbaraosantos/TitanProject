@@ -1,9 +1,6 @@
 package com.baronhub.titan.project.components.controllers.homepage;
 
 import com.baronhub.titan.project.components.services.mailer.Mailer;
-import com.baronhub.titan.project.components.services.mailer.MailerImpl;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

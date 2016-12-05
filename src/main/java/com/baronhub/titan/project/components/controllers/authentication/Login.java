@@ -1,8 +1,5 @@
 package com.baronhub.titan.project.components.controllers.authentication;
 
-import com.baronhub.titan.project.components.controllers.homepage.Homepage;
-import com.baronhub.titan.project.configurations.session.SpringAccountDetails;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -26,8 +23,11 @@ public class Login {
         return "Login";
     }
 
+    /**
+     * Platforms initial State
+     */
     @RequestMapping(value = "/" , method = RequestMethod.GET)
     public void init(){
-
+        logger.info("Not developed yet",  new Exception("Not developed"));
     }
 }
