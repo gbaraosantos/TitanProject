@@ -1,5 +1,5 @@
 -- noinspection SqlDialectInspectionForFile
 
 /* Populate userPermissions Table */
-INSERT INTO userPermissions VALUES ("User");
-INSERT INTO userPermissions VALUES ("Admin");
+INSERT INTO Permissions VALUES ("User");
+INSERT INTO Permissions VALUES ("Admin");
