@@ -21,7 +21,7 @@ import java.util.List;
 public abstract class AbstractDao<P1 extends Serializable, T> {
     @Autowired private SessionFactory sessionFactory;
     private final Class<T> persistentClass;
-    private final static String emptyQuery = "No Elements in this query";
+    private static final String EMPTY_QUERY = "No Elements in this query";
 
     /**
      * Starts up Persistent Class
@@ -42,7 +42,7 @@ public abstract class AbstractDao<P1 extends Serializable, T> {
     @SuppressWarnings("unchecked")
     protected T getByKey(P1 key) throws BaseException{
         T temp = (T) getSession().get(persistentClass, key);
-        if(temp == null) throw new DatabaseExceptions.NoElementsException(emptyQuery);
+        if(temp == null) throw new DatabaseExceptions.NoElementsException(EMPTY_QUERY);
         return temp;
     }
 
@@ -56,7 +56,7 @@ public abstract class AbstractDao<P1 extends Serializable, T> {
     protected List<T> getByString(String propertyName, String value) throws BaseException{
         Criteria cr = getSession().createCriteria(persistentClass);
         cr.add(Restrictions.eq(propertyName, value));
-        if( cr.list()==null ||  cr.list().size() <= 0) throw new DatabaseExceptions.NoElementsException(emptyQuery);
+        if( cr.list()==null ||  cr.list().size() <= 0) throw new DatabaseExceptions.NoElementsException(EMPTY_QUERY);
 
         return (List<T>) cr.list();
     }
@@ -72,7 +72,7 @@ public abstract class AbstractDao<P1 extends Serializable, T> {
     protected List<T> getByDate(String propertyName, Date from, Date to) throws BaseException{
         Criteria cr = getSession().createCriteria(persistentClass);
         cr.add(Restrictions.between(propertyName, from , to));
-        if( cr.list()==null ||  cr.list().size() <= 0) throw new DatabaseExceptions.NoElementsException(emptyQuery);
+        if( cr.list()==null ||  cr.list().size() <= 0) throw new DatabaseExceptions.NoElementsException(EMPTY_QUERY);
 
         return (List<T>) cr.list();
     }
@@ -114,7 +114,7 @@ public abstract class AbstractDao<P1 extends Serializable, T> {
      * @throws BaseException Exception returns
      */
     protected T getOne(List<T> list) throws BaseException{
-        if(list==null || list.isEmpty()) throw new DatabaseExceptions.NoElementsException(emptyQuery);
+        if(list==null || list.isEmpty()) throw new DatabaseExceptions.NoElementsException(EMPTY_QUERY);
         if(list.size() > 1) throw new DatabaseExceptions.MoreThanExpectedException("Query returned more than one element");
 
         return list.get(0);
