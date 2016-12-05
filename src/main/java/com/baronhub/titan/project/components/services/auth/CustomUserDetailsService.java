@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 /**
  * Custom impl of User Details
  */
-@Service("CustomUserDetailsService")
+@Service("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
     @Autowired private UserManagement dao;
 

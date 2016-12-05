@@ -18,20 +18,17 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @Column(name="state", nullable=false)
+    private String state;
 
+    public String getState() { return state; }
     public int getId() { return id; }
     public String getEmail() { return email; }
     public String getPassword() { return password; }
 
-    public User setEmail(String email) {
-        this.email = email;
-        return this;
-    }
-
-    public User setPassword(String password) {
-        this.password = password;
-        return this;
-    }
+    public User setEmail(String email) { this.email = email; return this; }
+    public User setPassword(String password) { this.password = password; return this; }
+    public User setState(String state) { this.state = state; return this; }
 
     /**
      * How to print this object
