@@ -17,6 +17,9 @@ public class SpringAccountDetails {
     private String userName;
 
 
+    /**
+     * Initializes SpringAccountDetails Username
+     */
     public SpringAccountDetails(){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 

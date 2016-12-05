@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 @Service("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
     @Autowired private UserManagement userDao;
-    private static Logger logger = Logger.getLogger(CustomUserDetailsService.class.getName());
+    private static Logger logger = Logger.getLogger(CustomUserDetailsService.class);
 
     /**
      * Class that will create a UserDetails Object to register a new login with spring security
@@ -47,7 +47,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                                 getGrantedAuthorities(user));
 
         } catch (BaseException exception) {
-            logger.log(Level.ERROR, exception);
+            logger.error("Error Authenticating", exception);
             return null;
         }
     }

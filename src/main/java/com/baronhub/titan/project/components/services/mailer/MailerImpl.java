@@ -19,7 +19,7 @@ import java.util.List;
 @Service("Mailer")
 public class MailerImpl implements Mailer{
     @Autowired private JavaMailSenderImpl mailer;
-    private static Logger logger = Logger.getLogger(MailerImpl.class.getName());
+    private static Logger logger = Logger.getLogger(MailerImpl.class);
 
     /**
      * @param fromAddress from Whom
@@ -40,7 +40,7 @@ public class MailerImpl implements Mailer{
             return true;
 
         }catch (MessagingException exception) {
-            logger.log(Level.ERROR, exception);
+            logger.error("Error Sending Email", exception);
             return false;
         }
     }
