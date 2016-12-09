@@ -11,8 +11,8 @@
 
     <body>
         <form role="form" action="<c:url value="/loginForm"/>" method="post" class="login-form">
-            <input class="form-control" placeholder="E-mail" name="email" type="text" id = "email">
-            <input class="form-control" placeholder="Password" name="password" type="password" id = "password">
+            <input placeholder="E-mail" name="email" type="text" id = "email">
+            <input placeholder="Password" name="password" type="password" id = "password">
             <button type="submit">Log in!</button>
 
 

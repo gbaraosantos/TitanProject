@@ -59,13 +59,11 @@ public class User {
 
     @Override
     public boolean equals(Object b){
-        User other;
-
         if (this == b)  return true;
         if (b == null) return false;
         if (!(b instanceof User)) return false;
 
-        other = (User) b;
+        User other = (User) b;
 
         return  other.getEmail().equals(this.getEmail())         &&
                 other.getPassword().equals(this.getPassword())   &&

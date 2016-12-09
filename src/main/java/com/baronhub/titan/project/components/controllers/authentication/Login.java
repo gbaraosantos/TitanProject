@@ -19,7 +19,8 @@ public class Login {
      */
     @RequestMapping(value = "/login" , method = RequestMethod.GET)
     public String redirectLogin(){
-        if (!(SecurityContextHolder.getContext().getAuthentication() instanceof AnonymousAuthenticationToken)) return "redirect:/weblink";
+
+        if (!(SecurityContextHolder.getContext().getAuthentication() instanceof AnonymousAuthenticationToken)) return "redirect:/titan";
         return "Login";
     }
 
