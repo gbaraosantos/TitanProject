@@ -40,7 +40,7 @@ public enum FileExtension {
     }
 
     /**
-     * Uses the filename to define which extensions are accepted
+     * Uses the filename to define which extensions are accepted.
      * @param originalFilename Filename
      * @return FileExtension
      */
