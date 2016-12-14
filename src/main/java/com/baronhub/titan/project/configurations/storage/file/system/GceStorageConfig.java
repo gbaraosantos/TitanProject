@@ -8,7 +8,12 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.StorageScopes;
+import org.apache.log4j.Logger;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.Collection;
@@ -16,33 +21,32 @@ import java.util.Collection;
 /**
  * Google Cloud Engine Storage Config
  */
-
+@Configuration
 public class GceStorageConfig {
-    private static Storage instance = null;
+    private static Logger logger = Logger.getLogger(GceStorageConfig.class);
 
-    public static synchronized Storage getService() throws IOException, GeneralSecurityException {
-        if (instance == null) {
-            instance = buildService();
+    @Bean
+    public Storage GceStorageSetup(){
+        try {
+            File file = new File(getClass().getResource("/keys/projectKey.json").getFile());
+
+            HttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
+            JsonFactory jsonFactory = new JacksonFactory();
+
+            GoogleCredential credential = GoogleCredential.fromStream(new FileInputStream(file.getAbsolutePath()));
+
+            if (credential.createScopedRequired()) {
+                Collection<String> scopes = StorageScopes.all();
+                credential = credential.createScoped(scopes);
+            }
+
+            return new Storage.Builder(transport, jsonFactory, credential)
+                    .setApplicationName("Titan Project")
+                    .build();
+
+        } catch (GeneralSecurityException | IOException e) {
+            logger.error("Error initializing Google Cloud Engine Storage" , e);
+            return null;
         }
-        return instance;
-    }
-
-    private static Storage buildService() throws IOException, GeneralSecurityException {
-        HttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
-        JsonFactory jsonFactory = new JacksonFactory();
-        GoogleCredential credential = GoogleCredential.getApplicationDefault(transport, jsonFactory);
-
-        // Depending on the environment that provides the default credentials (for
-        // example: Compute Engine, App Engine), the credentials may require us to
-        // specify the scopes we need explicitly.  Check for this case, and inject
-        // the Cloud Storage scope if required.
-        if (credential.createScopedRequired()) {
-            Collection<String> scopes = StorageScopes.all();
-            credential = credential.createScoped(scopes);
-        }
-
-        return new Storage.Builder(transport, jsonFactory, credential)
-                .setApplicationName("Titan Project")
-                .build();
     }
 }

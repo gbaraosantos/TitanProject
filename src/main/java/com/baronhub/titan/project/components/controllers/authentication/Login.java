@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class Login {
-    private static Logger logger = Logger.getLogger(Login.class);
+    private static final Logger logger = Logger.getLogger(Login.class);
+
     /**
      * Handles Login
      * @return String
