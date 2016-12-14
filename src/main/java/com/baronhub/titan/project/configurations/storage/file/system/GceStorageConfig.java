@@ -25,8 +25,12 @@ import java.util.Collection;
 public class GceStorageConfig {
     private static Logger logger = Logger.getLogger(GceStorageConfig.class);
 
+    /**
+     * Setup of the GCE Storage
+     * @return Storage
+     */
     @Bean
-    public Storage GceStorageSetup(){
+    public Storage gceStorageSetup(){
         try {
             File file = new File(getClass().getResource("/keys/projectKey.json").getFile());
 

@@ -34,13 +34,13 @@ public class FileWrapper{
      * @throws IOException Exception
      */
     public FileWrapper(MultipartFile multipartFile) throws IOException {
-        File file = new File(multipartFile.getOriginalFilename());
+        File fileTemp = new File(multipartFile.getOriginalFilename());
 
-        FileOutputStream fos = new FileOutputStream(file);
+        FileOutputStream fos = new FileOutputStream(fileTemp);
         fos.write(multipartFile.getBytes());
         fos.close();
 
-        this.file = file;
+        this.file = fileTemp;
         init();
 
     }
@@ -60,6 +60,7 @@ public class FileWrapper{
     private void init(){
         this.fileName = file.getName();
         this.absolutePath = file.getAbsolutePath();
+
         this.extension = FileExtension.getExtension(this.fileName);
         this.uploadDate = new Date();
         this.size = file.length(); //?

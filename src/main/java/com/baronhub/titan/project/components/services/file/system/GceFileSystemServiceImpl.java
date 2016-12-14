@@ -35,6 +35,7 @@ public class GceFileSystemServiceImpl implements GceFileSystemService{
      * Gets an Object from a GCE Bucket
      * @param bucketName Bucket name in GCE
      * @param filePath Path within the bucket
+     * @return StorageObject
      * @throws IOException Exception
      */
     public StorageObject getObject(String bucketName, String filePath) throws IOException {
@@ -44,6 +45,7 @@ public class GceFileSystemServiceImpl implements GceFileSystemService{
     /**
      * Gets all Objects from a GCE Bucket
      * @param bucketName Bucket name in GCE
+     * @return List<StorageObject>
      * @throws IOException Exception
      */
     public List<StorageObject> listBucket(String bucketName) throws IOException{

@@ -39,6 +39,11 @@ public enum FileExtension {
         return this.name();
     }
 
+    /**
+     * Uses the filename to define which extensions are accepted
+     * @param originalFilename Filename
+     * @return FileExtension
+     */
     public static FileExtension getExtension(String originalFilename) {
         if(originalFilename.endsWith(FileExtension.FLAC.getExtension()))    return FileExtension.FLAC;
         if(originalFilename.endsWith(FileExtension.MP3.getExtension()))     return FileExtension.MP3;
