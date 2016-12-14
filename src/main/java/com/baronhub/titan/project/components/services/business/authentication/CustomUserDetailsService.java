@@ -1,4 +1,4 @@
-package com.baronhub.titan.project.components.services.authentication;
+package com.baronhub.titan.project.components.services.business.authentication;
 
 import com.baronhub.titan.project.common.enums.State;
 import com.baronhub.titan.project.common.exceptions.BaseException;

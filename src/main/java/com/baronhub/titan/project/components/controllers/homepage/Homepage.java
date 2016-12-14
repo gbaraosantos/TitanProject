@@ -1,6 +1,6 @@
 package com.baronhub.titan.project.components.controllers.homepage;
 
-import com.baronhub.titan.project.components.services.file.system.GceFileSystemService;
+import com.baronhub.titan.project.components.services.operation.file.system.gce.GceFileSystemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
