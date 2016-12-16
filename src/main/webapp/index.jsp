@@ -5,7 +5,7 @@
 <html>
     <head>
         <title>Titan Project</title>
-        <script src="<c:url value="//d3js.org/d3.v3.min.js"/>"></script>
+
     </head>
 
     <body>
@@ -15,7 +15,7 @@
             <input type="file" name="testFile"/>
             <button type="submit" value="Upload">Log in!</button>
         </form:form>
-
+        <script src="<c:url value="//d3js.org/d3.v3.min.js"/>"></script>
 
         <script>
 
