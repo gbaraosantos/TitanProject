@@ -27,7 +27,7 @@ public class UserManagementImpl extends AbstractDao<Integer, User> implements  U
      * @param user User
      */
     @Override
-    public void register(User user) {
+    public void addUser(User user) {
         persist(user);
     }
 

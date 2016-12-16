@@ -21,7 +21,7 @@ public interface UserManagement {
      * Adds a new user to the database
      * @param user User
      */
-    void register(User user);
+    void addUser(User user);
 
     /**
      * Updates a user

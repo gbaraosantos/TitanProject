@@ -1,10 +1,8 @@
 package com.baronhub.titan.project.components.services.operation.file.system.gce;
 
-import com.google.api.services.storage.model.StorageObject;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * File System Service Interface
@@ -25,15 +23,7 @@ public interface GceFileSystemService {
      * @return StorageObject
      * @throws IOException Exception
      */
-    StorageObject getObject(String bucketName, String filePath) throws IOException ;
-
-    /**
-     * Gets all Objects from a GCE Bucket
-     * @param bucketName Bucket name in GCE
-     * @return List<StorageObject>
-     * @throws IOException Exception
-     */
-    List<StorageObject> listBucket(String bucketName) throws IOException;
+    String getObject(String bucketName, String filePath) throws IOException ;
 
     /**
      * Adds a file to the GCE File System
