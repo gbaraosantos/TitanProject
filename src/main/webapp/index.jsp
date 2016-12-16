@@ -5,6 +5,7 @@
 <html>
     <head>
         <title>Titan Project</title>
+        <script src="<c:url value="//d3js.org/d3.v3.min.js"/>"></script>
     </head>
 
     <body>
@@ -15,7 +16,7 @@
             <button type="submit" value="Upload">Log in!</button>
         </form:form>
 
-        <script src="//d3js.org/d3.v3.min.js"></script>
+
         <script>
 
             var maxRadius = 32, // maximum radius of circle
